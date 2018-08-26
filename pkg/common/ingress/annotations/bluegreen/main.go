@@ -101,7 +101,7 @@ func (bg bgdeploy) Parse(ing *extensions.Ingress) (interface{}, error) {
 		if mode != "" {
 			glog.Warningf("unsupported blue/green mode '%v' on '%v/%v', falling back to 'pod'", mode, ing.Namespace, ing.Name)
 		}
-		mode = "pod"
+		mode = "deploy"
 	}
 	return &Config{
 		DeployWeight: dw,
